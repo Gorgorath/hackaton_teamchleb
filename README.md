@@ -4,7 +4,7 @@ Witam witam to notatki Krzysia na temat enigmy NIE DOTYKAĆ BO KURWA ZABIJE
 
 UWAGI:
 1. Używane rotory od lewej do prawej to I, II, III (później możliwość zmiany rotorów). Sygnał jako pierwszy przechodzi przez rotor prawy, czyli rotor III, potem II, a na końcu I.
-2. Potem sygnał wysyłany jest z powrotem (jeżeli z lewego rotoru wyszła litera np. M, to z reflektoru wychodzi litera o 13 dalej (połowa z 26), czyli Z i przechodzi z powrotem przez rotory, tym razem od lewej do prawej (I - III))
+2. Potem sygnał wysyłany jest z powrotem przesyłany przez rotory, tym razem od lewej do prawej (I - III). Pamiętać że kodowanie jest odwrotne (zamiast podporządkowywać np. EKM... do ABC..., przyporządkowujemy ABC... do EKM...)!!!
 3. Rotory mają pozycje od 1 do 26
 4. Kiedy rotor I zmienia pozycję z Q na R to porusza kolejny rotor, rotor 2 przy zmianie z E na F, rotor 3 przy zmianie z V na W
 5. Rotory standardowo zmieniają litery odpowiednio ABCDEFGHIJKLMNOPQRSTUVWXYZ na:
