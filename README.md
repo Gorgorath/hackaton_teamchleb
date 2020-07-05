@@ -13,14 +13,16 @@ UWAGI:
 - rotor III - BDFHJLCPRTXVZNYEIWGAKMUSQO
 - rotor IV - ESOVPZJAYQUIRHXLNFTGKDCMWB
 - rotor V - VZBRGITYUPSDNHLXAWMJQOFECK
-Po każdym obrocie rotora zamiana zmienia się np. po pierwszym wpisaniu w pierwszym rotorze A zmieni się na E, a po drugim A-K, trzeim A-M itd.
+6. Po każdym obrocie rotora zamiana zmienia się np. po pierwszym wpisaniu w pierwszym rotorze A zmieni się na E, a po drugim A-K, trzeim A-M itd.
+7. Ring position zmienia offset między wejściem a wyjściem z rotora. Działa na podobnej zasadzie co ruch rotora tzn. jeśli ring position jest 1 (zakładając że rotor jest I oraz rotor position to 1) to A zmieni się na E, a jeśli ring position jest 2, to A zmieni się na K (zgodnie z punktem 5)
 
 Działanie krok po kroku:
-1. Użytkownik (niżej U) wciska klawisz (przykładowo A)
-2. Sygnał przekazywany jest dalej do wirników (my użyjemy tych typu I, II oraz III, ewentualnie potem dodamy opcję zmiany na inne) 
-3. Reflektor odwraca sygnał jak napisałem wyżej
-4. Sygnał wraca przez rotory
-5. Sygnał trafia do plugboarda gdzie zmienia jedną literę (tą, która wyszła z rotora) na inną (w zależności od podpięcia)
-6. Finalna litera jest wyświetlana
+1. Użytkownik wciska klawisz
+2. Sygnał przechodzi przez plugboard
+3. Sygnał przekazywany jest dalej do wirników (my użyjemy tych typu I, II oraz III, ewentualnie potem dodamy opcję zmiany na inne) 
+4. Reflektor odwraca sygnał jak napisałem wyżej
+5. Sygnał wraca przez rotory
+6. Sygnał trafia do plugboarda gdzie zmienia jedną literę (tą, która wyszła z rotora) na inną (w zależności od podpięcia)
+7. Finalna litera jest wyświetlana
 
 Powodzenia przyszły ja
