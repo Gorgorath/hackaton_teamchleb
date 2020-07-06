@@ -38,6 +38,16 @@ namespace hackaton_teamchleb
                 Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=emb_logo");
             }
         }
+
+        /*private string enigmaCipher(List<char> chars)
+        {
+            Plugboard plugboard = new Plugboard(new List<Plug>());
+            foreach (char ch in chars)
+            {
+                char znak = ch;
+
+            }
+        }*/
     }
 
     class Plug
