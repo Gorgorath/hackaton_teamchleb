@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hackaton_teamchleb", "hackaton_teamchleb\hackaton_teamchleb.csproj", "{EB0646FD-6255-4BD1-A693-EFE63B75F947}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hackaton_teamchleb", "hackaton_teamchleb.csproj", "{90CE6960-6141-43C2-8F73-51FE3B293545}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EB0646FD-6255-4BD1-A693-EFE63B75F947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB0646FD-6255-4BD1-A693-EFE63B75F947}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB0646FD-6255-4BD1-A693-EFE63B75F947}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB0646FD-6255-4BD1-A693-EFE63B75F947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90CE6960-6141-43C2-8F73-51FE3B293545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90CE6960-6141-43C2-8F73-51FE3B293545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90CE6960-6141-43C2-8F73-51FE3B293545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90CE6960-6141-43C2-8F73-51FE3B293545}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {95CAE604-B912-4F6B-B04D-85169766156F}
+		SolutionGuid = {DE5474F8-70A5-4E29-A6FE-DD36C0ACEA57}
 	EndGlobalSection
 EndGlobal
