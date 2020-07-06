@@ -27,7 +27,8 @@ Działanie krok po kroku:
 4. Sygnał przekazywany jest dalej do wirników (my użyjemy tych typu I, II oraz III, ewentualnie potem dodamy opcję zmiany na inne) 
 5. Reflektor zmienia literę jak napisałem wyżej
 6. Sygnał wraca przez rotory
-7. Sygnał trafia do plugboarda gdzie zmienia jedną literę (tą, która wyszła z rotora) na inną (w zależności od podpięcia)
-8. Finalna litera jest wyświetlana
+7. Sygnał przechodzi przez entry wheel
+8. Sygnał trafia do plugboarda gdzie zmienia jedną literę (tą, która wyszła z rotora) na inną (w zależności od podpięcia)
+9. Finalna litera jest wyświetlana
 
 Powodzenia przyszły ja
