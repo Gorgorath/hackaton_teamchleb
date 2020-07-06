@@ -29,7 +29,8 @@ namespace hackaton_teamchleb
             //Plug tplug = new Plug('A', 'P');
             //Plugboard pboard = new Plugboard(new List<Plug> { tplug });
             //EntryWheel ew = new EntryWheel();
-            //output_textbox.Text = ew.ZamienZnak(inputChars[0]).ToString();
+            //Reflector reflector = new Reflector("B");
+            //output_textbox.Text = reflector.ZamienZnak(inputChars[0]).ToString();
         }
     }
 
@@ -77,6 +78,7 @@ namespace hackaton_teamchleb
         string rotorType;
         string rotorKey;
         string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        public bool czyPoReflektorze = false;
 
         public Rotor(string rType, int roPos, int riPos)
         {
@@ -121,6 +123,32 @@ namespace hackaton_teamchleb
         public char ZamienZnak(char ch)
         {
             ch = klucz[znaki.IndexOf(ch)];
+            return ch;
+        }
+    }
+
+    class Reflector
+    {
+        string reflectorType;
+        string reflectorKey;
+        string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        public Reflector(string rType)
+        {
+            reflectorType = rType;
+
+            if (reflectorType == "B")
+            {
+                reflectorKey = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
+            } else if (reflectorType == "C")
+            {
+                reflectorKey = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
+            }
+        }
+
+        public char ZamienZnak(char ch)
+        {
+            ch = reflectorKey[znaki.IndexOf(ch)];
             return ch;
         }
     }
