@@ -73,7 +73,7 @@ namespace hackaton_teamchleb
 
                 char znak = ch;
                 znak = plugboard.ZamienZnak(znak);
-                znak = entryWheel.ZamienZnak(znak);
+                //znak = entryWheel.ZamienZnak(znak);
                 znak = rotorP.ZamienZnak(znak);
                 znak = rotorS.ZamienZnak(znak);
                 znak = rotorL.ZamienZnak(znak);
@@ -82,12 +82,12 @@ namespace hackaton_teamchleb
                 rotorL.czyPoReflektorze = true;
                 rotorS.czyPoReflektorze = true;
                 rotorP.czyPoReflektorze = true;
-                entryWheel.czyPoReflektorze = true;
+                //entryWheel.czyPoReflektorze = true;
 
                 znak = rotorL.ZamienZnak(znak);
                 znak = rotorS.ZamienZnak(znak);
                 znak = rotorP.ZamienZnak(znak);
-                znak = entryWheel.ZamienZnak(znak);
+                //znak = entryWheel.ZamienZnak(znak);
                 znak = plugboard.ZamienZnak(znak);
 
                 wynik += znak;
