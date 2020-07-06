@@ -231,14 +231,35 @@ namespace hackaton_teamchleb
         //Obraca rotory
         public void ObrocRotory()
         {
-            rotory[0].rotorPos++;
-            if (rotory[0].rotorKey[rotory[0].rotorPos] == rotory[0].rotorRotateChar)
+            if (rotory[0].rotorPos == 26)
             {
-                rotory[1].rotorPos++;
-                if (rotory[1].rotorKey[rotory[1].rotorPos] == rotory[1].rotorRotateChar)
+                rotory[0].rotorPos++;
+                if (rotory[0].rotorKey[rotory[0].rotorPos] == rotory[0].rotorRotateChar)
                 {
-                    rotory[2].rotorPos++;
+                    if (rotory[1].rotorPos == 26)
+                    {
+                        rotory[1].rotorPos++;
+                        if (rotory[1].rotorKey[rotory[1].rotorPos] == rotory[1].rotorRotateChar)
+                        {
+                            if (rotory[2].rotorPos == 26)
+                            {
+                                rotory[2].rotorPos++;
+                            }
+                            else
+                            {
+                                rotory[2].rotorPos = 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        rotory[1].rotorPos = 1;
+                    }
                 }
+            }
+            else
+            {
+                rotory[0].rotorPos = 1;
             }
         }
     }
