@@ -229,6 +229,7 @@
             this.code_button.TabIndex = 9;
             this.code_button.Text = "Szyfruj";
             this.code_button.UseVisualStyleBackColor = true;
+            this.code_button.Click += new System.EventHandler(this.code_button_Click);
             // 
             // output_box
             // 
@@ -264,7 +265,7 @@
             this.rotor1_box.Size = new System.Drawing.Size(270, 70);
             this.rotor1_box.TabIndex = 20;
             this.rotor1_box.TabStop = false;
-            this.rotor1_box.Text = "Rotor 1";
+            this.rotor1_box.Text = "Rotor Lewy";
             // 
             // rotor1_label2
             // 
@@ -299,7 +300,7 @@
             this.rotor2_box.Size = new System.Drawing.Size(270, 70);
             this.rotor2_box.TabIndex = 23;
             this.rotor2_box.TabStop = false;
-            this.rotor2_box.Text = "Rotor 2";
+            this.rotor2_box.Text = "Rotor Środkowy";
             // 
             // rotor2_label2
             // 
@@ -334,7 +335,7 @@
             this.rotor3_box.Size = new System.Drawing.Size(270, 70);
             this.rotor3_box.TabIndex = 23;
             this.rotor3_box.TabStop = false;
-            this.rotor3_box.Text = "Rotor 3";
+            this.rotor3_box.Text = "Rotor Prawy";
             // 
             // rotor3_label2
             // 
@@ -369,6 +370,9 @@
             this.Controls.Add(this.output_box);
             this.Controls.Add(this.code_button);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(588, 469);
+            this.MinimumSize = new System.Drawing.Size(588, 469);
             this.Name = "Form1";
             this.Text = "Enigma";
             ((System.ComponentModel.ISupportInitialize)(this.rotor3_ringPosition)).EndInit();
