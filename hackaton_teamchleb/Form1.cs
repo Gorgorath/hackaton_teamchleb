@@ -39,6 +39,11 @@ namespace hackaton_teamchleb
             }
         }
 
+        private void plug_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*private string enigmaCipher(List<char> chars)
         {
             Plugboard plugboard = new Plugboard(new List<Plug>());

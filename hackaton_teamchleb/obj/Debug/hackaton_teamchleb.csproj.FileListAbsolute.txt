@@ -8,3 +8,4 @@ C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchl
 C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.csproj.CoreCompileInputs.cache
 C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.exe
 C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.pdb
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.Form2.resources

@@ -49,6 +49,7 @@
             this.rotor3_box = new System.Windows.Forms.GroupBox();
             this.rotor3_label2 = new System.Windows.Forms.Label();
             this.rotor3_label1 = new System.Windows.Forms.Label();
+            this.plug_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.rotor3_ringPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor2_ringPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor1_ringPosition)).BeginInit();
@@ -357,11 +358,26 @@
             this.rotor3_label1.TabIndex = 22;
             this.rotor3_label1.Text = "Rotor position";
             // 
+            // plug_button
+            // 
+            this.plug_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.plug_button.Font = new System.Drawing.Font("Courier New", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.plug_button.Location = new System.Drawing.Point(285, 285);
+            this.plug_button.Margin = new System.Windows.Forms.Padding(10);
+            this.plug_button.Name = "plug_button";
+            this.plug_button.Padding = new System.Windows.Forms.Padding(10);
+            this.plug_button.Size = new System.Drawing.Size(270, 120);
+            this.plug_button.TabIndex = 24;
+            this.plug_button.Text = "Wybierz wtyczki";
+            this.plug_button.UseVisualStyleBackColor = true;
+            this.plug_button.Click += new System.EventHandler(this.plug_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 422);
+            this.Controls.Add(this.plug_button);
             this.Controls.Add(this.rotor3_box);
             this.Controls.Add(this.rotor2_box);
             this.Controls.Add(this.rotor1_box);
@@ -411,6 +427,7 @@
         private System.Windows.Forms.GroupBox rotor3_box;
         private System.Windows.Forms.Label rotor3_label2;
         private System.Windows.Forms.Label rotor3_label1;
+        private System.Windows.Forms.Button plug_button;
     }
 }
 
