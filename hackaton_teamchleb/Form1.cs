@@ -26,7 +26,10 @@ namespace hackaton_teamchleb
             input = input_textbox.Text.ToUpper();
             inputChars = input.ToList();
             //Rotor rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
-            //output_textbox.Text = rotorL.ZamienZnak(inputChars[0]).ToString();
+            //Plug tplug = new Plug('A', 'P');
+            //Plugboard pboard = new Plugboard(new List<Plug> { tplug });
+            //EntryWheel ew = new EntryWheel();
+            //output_textbox.Text = ew.ZamienZnak(inputChars[0]).ToString();
         }
     }
 
@@ -106,6 +109,18 @@ namespace hackaton_teamchleb
                 ch = rotorKey[znaki.IndexOf(ch) + offset - 26];
             }
                 
+            return ch;
+        }
+    }
+
+    class EntryWheel
+    {
+        string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        string klucz = "QWERTZUIOPASDFGHJKLYXCVBNM";
+
+        public char ZamienZnak(char ch)
+        {
+            ch = klucz[znaki.IndexOf(ch)];
             return ch;
         }
     }
