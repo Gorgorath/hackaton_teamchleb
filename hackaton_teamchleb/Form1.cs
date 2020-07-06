@@ -73,10 +73,12 @@ namespace hackaton_teamchleb
 
     class Rotor
     {
-        int rotorPos, ringPos;
+        public int rotorPos;
+        int ringPos;
         int offset;
         string rotorType;
-        string rotorKey;
+        public string rotorKey;
+        public char rotorRotateChar;
         string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public bool czyPoReflektorze = false;
 
@@ -90,14 +92,17 @@ namespace hackaton_teamchleb
             if (rotorType == "I")
             {
                 rotorKey = "EKMFLGDQVZNTOWYHXUSPAIBRCJ";
+                rotorRotateChar = 'R';
             } 
             else if (rotorType == "II")
             {
                 rotorKey = "AJDKSIRUXBLHWTMCQGZNPYFVOE";
+                rotorRotateChar = 'F';
             }
             else if (rotorType == "III")
             {
                 rotorKey = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
+                rotorRotateChar = 'W';
             }
         }
 
@@ -112,6 +117,31 @@ namespace hackaton_teamchleb
             }
                 
             return ch;
+        }
+    }
+
+    class Rotors
+    {
+        //Pierwszy rotor w liście to ma być rotor prawy, drugi to rotor środkowy, a trzeci to rotor lewy
+        List<Rotor> rotory = new List<Rotor>();
+
+        public Rotors(List<Rotor> rs)
+        {
+            rotory = rs;
+        }
+
+        public void ObrocRotory()
+        {
+            rotory[0].rotorPos++;
+            if (rotory[0].rotorKey[rotory[0].rotorPos] == rotory[0].rotorRotateChar)
+            {
+                rotory[1].rotorPos++;
+                if (rotory[1].rotorKey[rotory[1].rotorPos] == rotory[1].rotorRotateChar)
+                {
+                    rotory[2].rotorPos++;
+                    //Dokończyć
+                }
+            }
         }
     }
 
