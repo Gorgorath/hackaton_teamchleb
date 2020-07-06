@@ -16,7 +16,9 @@ UWAGI:
 6. Po każdym obrocie rotora zamiana zmienia się np. po pierwszym wpisaniu w pierwszym rotorze A zmieni się na E, a po drugim A-K, trzeim A-M itd.
 7. Ring position zmienia offset między wejściem a wyjściem z rotora. Działa na podobnej zasadzie co ruch rotora tzn. jeśli ring position jest 1 (zakładając że rotor jest I oraz rotor position to 1) to A zmieni się na E, a jeśli ring position jest 2, to A zmieni się na K (zgodnie z punktem 5)
 8. Entry wheel zmienia litery ABCDEFGHIJKLMNOPQRSTUVWXYZ odpowiednio na QWERTZUIOPASDFGHJKLYXCVBNM
-9. Reflektor zmienia litery podobnie jak plugboard, każda litera musi być połączona z inną
+9. Reflektor zmienia litery podobnie ABCDEFGHIJKLMNOPQRSTUVWXYZ jak plugboard odpowiednio na:
+- reflector B - YRUHQSLDPXNGOKMIEBFZCWVJAT
+- reflector C - FVPJIAOYEDRZXWGCTKUQSBNMHL
 
 Działanie krok po kroku:
 1. Użytkownik wciska klawisz
