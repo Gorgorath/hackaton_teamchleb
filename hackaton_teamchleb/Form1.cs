@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,10 @@ namespace hackaton_teamchleb
             //EntryWheel ew = new EntryWheel();
             //Reflector reflector = new Reflector("B");
             //output_textbox.Text = reflector.ZamienZnak(inputChars[0]).ToString();
+            if(input == "RICKROLL")
+            {
+                Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=emb_logo");
+            }
         }
     }
 

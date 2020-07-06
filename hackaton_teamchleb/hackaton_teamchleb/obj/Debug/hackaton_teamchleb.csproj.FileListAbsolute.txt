@@ -1,0 +1,9 @@
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\bin\Debug\hackaton_teamchleb.exe.config
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\bin\Debug\hackaton_teamchleb.exe
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\bin\Debug\hackaton_teamchleb.pdb
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.csprojAssemblyReference.cache
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.Properties.Resources.resources
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.csproj.GenerateResource.cache
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.csproj.CoreCompileInputs.cache
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.exe
+C:\C#\Gorgorath\hackaton_teamchleb\hackaton_teamchleb\hackaton_teamchleb\obj\Debug\hackaton_teamchleb.pdb
