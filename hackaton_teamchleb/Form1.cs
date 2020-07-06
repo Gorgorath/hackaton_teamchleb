@@ -23,8 +23,10 @@ namespace hackaton_teamchleb
 
         private void code_button_Click(object sender, EventArgs e)
         {
-            input = input_textbox.Text;
+            input = input_textbox.Text.ToUpper();
             inputChars = input.ToList();
+            //Rotor rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
+            //output_textbox.Text = rotorL.ZamienZnak(inputChars[0]).ToString();
         }
     }
 
@@ -32,7 +34,7 @@ namespace hackaton_teamchleb
     {
         public char litera1, litera2;
 
-        Plug(char ch1, char ch2)
+        public Plug(char ch1, char ch2)
         {
             litera1 = ch1;
             litera2 = ch2;
@@ -43,7 +45,7 @@ namespace hackaton_teamchleb
     {
         List<Plug> plugi = new List<Plug>();
 
-        Plugboard(List<Plug> pl)
+        public Plugboard(List<Plug> pl)
         {
             plugi = pl;
         }
@@ -71,13 +73,14 @@ namespace hackaton_teamchleb
         int offset;
         string rotorType;
         string rotorKey;
+        string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        Rotor(string rType, int roPos, int riPos)
+        public Rotor(string rType, int roPos, int riPos)
         {
             rotorType = rType;
             rotorPos = roPos;
             ringPos = riPos;
-            offset = rotorPos + ringPos;
+            offset = rotorPos - 1 + ringPos - 1;
 
             if (rotorType == "I")
             {
@@ -95,8 +98,14 @@ namespace hackaton_teamchleb
 
         public char ZamienZnak(char ch)
         {
-
-
+            if (znaki.IndexOf(ch) + offset < 26)
+            {
+                ch = rotorKey[znaki.IndexOf(ch) + offset];
+            } else if (znaki.IndexOf(ch) + offset >= 26)
+            {
+                ch = rotorKey[znaki.IndexOf(ch) + offset - 26];
+            }
+                
             return ch;
         }
     }

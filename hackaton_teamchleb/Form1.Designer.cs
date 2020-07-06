@@ -65,44 +65,134 @@
             // rotor3_ringPosition
             // 
             this.rotor3_ringPosition.Location = new System.Drawing.Point(350, 69);
+            this.rotor3_ringPosition.Maximum = new decimal(new int[] {
+            26,
+            0,
+            0,
+            0});
+            this.rotor3_ringPosition.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.rotor3_ringPosition.Name = "rotor3_ringPosition";
             this.rotor3_ringPosition.Size = new System.Drawing.Size(120, 22);
             this.rotor3_ringPosition.TabIndex = 3;
+            this.rotor3_ringPosition.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // rotor2_ringPosition
             // 
             this.rotor2_ringPosition.Location = new System.Drawing.Point(350, 41);
+            this.rotor2_ringPosition.Maximum = new decimal(new int[] {
+            26,
+            0,
+            0,
+            0});
+            this.rotor2_ringPosition.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.rotor2_ringPosition.Name = "rotor2_ringPosition";
             this.rotor2_ringPosition.Size = new System.Drawing.Size(120, 22);
             this.rotor2_ringPosition.TabIndex = 4;
+            this.rotor2_ringPosition.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // rotor1_ringPosition
             // 
             this.rotor1_ringPosition.Location = new System.Drawing.Point(350, 13);
+            this.rotor1_ringPosition.Maximum = new decimal(new int[] {
+            26,
+            0,
+            0,
+            0});
+            this.rotor1_ringPosition.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.rotor1_ringPosition.Name = "rotor1_ringPosition";
             this.rotor1_ringPosition.Size = new System.Drawing.Size(120, 22);
             this.rotor1_ringPosition.TabIndex = 5;
+            this.rotor1_ringPosition.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // rotor3_position
             // 
             this.rotor3_position.Location = new System.Drawing.Point(224, 69);
+            this.rotor3_position.Maximum = new decimal(new int[] {
+            26,
+            0,
+            0,
+            0});
+            this.rotor3_position.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.rotor3_position.Name = "rotor3_position";
             this.rotor3_position.Size = new System.Drawing.Size(120, 22);
             this.rotor3_position.TabIndex = 6;
+            this.rotor3_position.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // rotor2_position
             // 
             this.rotor2_position.Location = new System.Drawing.Point(224, 41);
+            this.rotor2_position.Maximum = new decimal(new int[] {
+            26,
+            0,
+            0,
+            0});
+            this.rotor2_position.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.rotor2_position.Name = "rotor2_position";
             this.rotor2_position.Size = new System.Drawing.Size(120, 22);
             this.rotor2_position.TabIndex = 7;
+            this.rotor2_position.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // rotor1_position
             // 
             this.rotor1_position.Location = new System.Drawing.Point(224, 13);
+            this.rotor1_position.Maximum = new decimal(new int[] {
+            26,
+            0,
+            0,
+            0});
+            this.rotor1_position.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.rotor1_position.Name = "rotor1_position";
             this.rotor1_position.Size = new System.Drawing.Size(120, 22);
             this.rotor1_position.TabIndex = 8;
+            this.rotor1_position.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // code_button
             // 
@@ -110,7 +200,7 @@
             this.code_button.Name = "code_button";
             this.code_button.Size = new System.Drawing.Size(75, 23);
             this.code_button.TabIndex = 9;
-            this.code_button.Text = "button1";
+            this.code_button.Text = "Szyfruj";
             this.code_button.UseVisualStyleBackColor = true;
             this.code_button.Click += new System.EventHandler(this.code_button_Click);
             // 
