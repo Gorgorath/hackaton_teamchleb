@@ -395,7 +395,6 @@
             this.MinimumSize = new System.Drawing.Size(445, 388);
             this.Name = "Form1";
             this.Text = "Enigma";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rotor3_ringPosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor2_ringPosition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor1_ringPosition)).EndInit();

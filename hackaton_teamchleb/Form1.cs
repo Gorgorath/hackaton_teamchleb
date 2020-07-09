@@ -65,6 +65,7 @@ namespace hackaton_teamchleb
             
             foreach (char ch in chars)
             {
+                rotory.ObrocRotory();
                 rotorL.czyPoReflektorze = false;
                 rotorS.czyPoReflektorze = false;
                 rotorP.czyPoReflektorze = false;
@@ -90,7 +91,6 @@ namespace hackaton_teamchleb
                 znak = plugboard.ZamienZnak(znak);
 
                 wynik += znak;
-                rotory.ObrocRotory();
             }
 
             return wynik;
@@ -162,7 +162,6 @@ namespace hackaton_teamchleb
             rotorType = rType;
             rotorPos = roPos;
             ringPos = riPos;
-            offset = rotorPos - ringPos;
 
             if (rotorType == "I")
             {
