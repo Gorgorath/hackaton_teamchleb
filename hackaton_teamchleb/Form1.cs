@@ -17,6 +17,14 @@ namespace hackaton_teamchleb
         List<char> inputChars = new List<char>();
         string output = "";
 
+        Plugboard plugboard = new Plugboard(new List<Plug>());
+        Rotor rotorL;
+        Rotor rotorS;
+        Rotor rotorP;
+        Rotors rotory;
+        EntryWheel entryWheel = new EntryWheel();
+        Reflector reflector = new Reflector("B");
+
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +33,11 @@ namespace hackaton_teamchleb
         //Przy kliknięciu guzika
         private void code_button_Click(object sender, EventArgs e)
         {
+            rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
+            rotorS = new Rotor("II", (int)rotor2_position.Value, (int)rotor2_ringPosition.Value);
+            rotorP = new Rotor("III", (int)rotor3_position.Value, (int)rotor3_ringPosition.Value);
+            rotory = new Rotors(rotorP, rotorS, rotorL);
+
             input = input_textbox.Text.ToUpper();
             inputChars = input.ToList();
             List<char> doUsuniecia = new List<char>();
@@ -44,28 +57,14 @@ namespace hackaton_teamchleb
             output = enigmaCipher(inputChars);
 
             output_textbox.Text = output;
-
-            if (input == "RICKROLL")
-            {
-                Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=emb_logo");
-            }
         }
 
         private string enigmaCipher(List<char> chars)
         {
-            Plugboard plugboard = new Plugboard(new List<Plug>());
-            Rotor rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
-            Rotor rotorS = new Rotor("II", (int)rotor2_position.Value, (int)rotor2_ringPosition.Value);
-            Rotor rotorP = new Rotor("III", (int)rotor3_position.Value, (int)rotor3_ringPosition.Value);
-            Rotors rotory = new Rotors(new List<Rotor> { rotorL, rotorS, rotorP });
-            EntryWheel entryWheel = new EntryWheel();
-            Reflector reflector = new Reflector("B");
-
             string wynik = "";
             
             foreach (char ch in chars)
             {
-                rotory.ObrocRotory();
                 rotorL.czyPoReflektorze = false;
                 rotorS.czyPoReflektorze = false;
                 rotorP.czyPoReflektorze = false;
@@ -91,9 +90,15 @@ namespace hackaton_teamchleb
                 znak = plugboard.ZamienZnak(znak);
 
                 wynik += znak;
+                rotory.ObrocRotory();
             }
 
             return wynik;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -157,7 +162,7 @@ namespace hackaton_teamchleb
             rotorType = rType;
             rotorPos = roPos;
             ringPos = riPos;
-            offset = (rotorPos - 1) - (ringPos - 1);
+            offset = rotorPos - ringPos;
 
             if (rotorType == "I")
             {
@@ -179,6 +184,7 @@ namespace hackaton_teamchleb
         //Zmienia znak zgodnie z obecnym ustawieniem rotora i jego pierścienia
         public char ZamienZnak(char ch)
         {
+            offset = rotorPos - ringPos;
             if (!this.czyPoReflektorze)
             {
                 if (znaki.IndexOf(ch) + offset < 26 && znaki.IndexOf(ch) + offset >= 0)
@@ -221,45 +227,48 @@ namespace hackaton_teamchleb
         //Przechowuje listę z wszystkimi rotorami i odpowiada za ich obrót
         //Pierwszy rotor w liście to ma być rotor prawy, drugi to rotor środkowy, a trzeci to rotor lewy
         List<Rotor> rotory = new List<Rotor>();
+        Rotor rotorP, rotorS, rotorL;
 
         //Konstruktor
-        public Rotors(List<Rotor> rs)
+        public Rotors(Rotor rP, Rotor rS, Rotor rL)
         {
-            rotory = rs;
+            rotorP = rP;
+            rotorS = rS;
+            rotorL = rL;
         }
 
         //Obraca rotory
         public void ObrocRotory()
         {
-            if (rotory[0].rotorPos == 26)
+            if (rotorP.rotorPos != 26)
             {
-                rotory[0].rotorPos++;
-                if (rotory[0].rotorKey[rotory[0].rotorPos] == rotory[0].rotorRotateChar)
+                rotorP.rotorPos++;
+                if (rotorP.rotorKey[rotorP.rotorPos] == rotorP.rotorRotateChar)
                 {
-                    if (rotory[1].rotorPos == 26)
+                    if (rotorS.rotorPos != 26)
                     {
-                        rotory[1].rotorPos++;
-                        if (rotory[1].rotorKey[rotory[1].rotorPos] == rotory[1].rotorRotateChar)
+                        rotorS.rotorPos++;
+                        if (rotorS.rotorKey[rotorS.rotorPos] == rotorS.rotorRotateChar)
                         {
-                            if (rotory[2].rotorPos == 26)
+                            if (rotorL.rotorPos != 26)
                             {
-                                rotory[2].rotorPos++;
+                                rotorL.rotorPos++;
                             }
                             else
                             {
-                                rotory[2].rotorPos = 1;
+                                rotorL.rotorPos = 1;
                             }
                         }
                     }
                     else
                     {
-                        rotory[1].rotorPos = 1;
+                        rotorS.rotorPos = 1;
                     }
                 }
             }
             else
             {
-                rotory[0].rotorPos = 1;
+                rotorP.rotorPos = 1;
             }
         }
     }
