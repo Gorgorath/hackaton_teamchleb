@@ -59,6 +59,7 @@ namespace hackaton_teamchleb
             output_textbox.Text = output;
         }
 
+        //Szyfrowanie :D
         private string enigmaCipher(List<char> chars)
         {
             string wynik = "";
