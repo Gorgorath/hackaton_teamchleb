@@ -13,11 +13,11 @@ namespace hackaton_teamchleb
 {
     public partial class Form1 : Form
     {
-        string input = "";
-        List<char> inputChars = new List<char>();
+        string str = "";
+        List<char> strChars = new List<char>();
         string output = "";
 
-        Plugboard plugboard = new Plugboard(new List<Plug>());
+        Plugboard plugboard;
         Rotor rotorL;
         Rotor rotorS;
         Rotor rotorP;
@@ -33,28 +33,13 @@ namespace hackaton_teamchleb
         //Przy kliknięciu guzika
         private void code_button_Click(object sender, EventArgs e)
         {
-            rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
-            rotorS = new Rotor("II", (int)rotor2_position.Value, (int)rotor2_ringPosition.Value);
-            rotorP = new Rotor("III", (int)rotor3_position.Value, (int)rotor3_ringPosition.Value);
-            rotory = new Rotors(rotorP, rotorS, rotorL);
+            getPlugs();
+            getRotors();
 
-            input = input_textbox.Text.ToUpper();
-            inputChars = input.ToList();
-            List<char> doUsuniecia = new List<char>();
-            foreach (char ch in inputChars)
-            {
-                if (!char.IsLetter(ch))
-                {
-                    doUsuniecia.Add(ch);
-                }
-            }
+            str = input_textbox.Text;
+            clearString();
 
-            foreach (char doU in doUsuniecia)
-            {
-                inputChars.Remove(doU);
-            }
-
-            output = enigmaCipher(inputChars);
+            output = enigmaCipher(strChars);
 
             output_textbox.Text = output;
         }
@@ -95,6 +80,110 @@ namespace hackaton_teamchleb
             }
 
             return wynik;
+        }
+
+        //Czyści string z niekompatybilnych znaków
+        private void clearString()
+        {
+            str = str.ToUpper();
+            strChars = str.ToList();
+
+            List<char> doUsuniecia = new List<char>();
+
+            foreach (char ch in strChars)
+            {
+                if (!char.IsLetter(ch))
+                {
+                    doUsuniecia.Add(ch);
+                }
+            }
+
+            foreach (char doU in doUsuniecia)
+            {
+                strChars.Remove(doU);
+            }
+        }
+
+        //Zbiera informację o plugach
+        private void getPlugs()
+        {
+            List<Plug> tempLista = new List<Plug>();
+
+            if (plug1L.Text != "" && plug1P.Text != "" && char.IsLetter(plug1L.Text[0]) && char.IsLetter(plug1P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug1L.Text.ToUpper()[0], plug1P.Text.ToUpper()[0]));
+            }
+
+            if (plug2L.Text != "" && plug2P.Text != "" && char.IsLetter(plug2L.Text[0]) && char.IsLetter(plug2P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug2L.Text.ToUpper()[0], plug2P.Text.ToUpper()[0]));
+            }
+
+            if (plug3L.Text != "" && plug3P.Text != "" && char.IsLetter(plug3L.Text[0]) && char.IsLetter(plug3P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug3L.Text.ToUpper()[0], plug3P.Text.ToUpper()[0]));
+            }
+
+            if (plug4L.Text != "" && plug4P.Text != "" && char.IsLetter(plug4L.Text[0]) && char.IsLetter(plug4P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug4L.Text.ToUpper()[0], plug4P.Text.ToUpper()[0]));
+            }
+
+            if (plug5L.Text != "" && plug5P.Text != "" && char.IsLetter(plug5L.Text[0]) && char.IsLetter(plug5P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug5L.Text.ToUpper()[0], plug5P.Text.ToUpper()[0]));
+            }
+
+            if (plug6L.Text != "" && plug6P.Text != "" && char.IsLetter(plug6L.Text[0]) && char.IsLetter(plug6P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug6L.Text.ToUpper()[0], plug6P.Text.ToUpper()[0]));
+            }
+
+            if (plug7L.Text != "" && plug7P.Text != "" && char.IsLetter(plug7L.Text[0]) && char.IsLetter(plug7P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug7L.Text.ToUpper()[0], plug7P.Text.ToUpper()[0]));
+            }
+
+            if (plug8L.Text != "" && plug8P.Text != "" && char.IsLetter(plug8L.Text[0]) && char.IsLetter(plug8P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug8L.Text.ToUpper()[0], plug8P.Text.ToUpper()[0]));
+            }
+
+            if (plug9L.Text != "" && plug9P.Text != "" && char.IsLetter(plug9L.Text[0]) && char.IsLetter(plug9P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug9L.Text.ToUpper()[0], plug9P.Text.ToUpper()[0]));
+            }
+
+            if (plug10L.Text != "" && plug10P.Text != "" && char.IsLetter(plug10L.Text[0]) && char.IsLetter(plug10P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug10L.Text.ToUpper()[0], plug10P.Text.ToUpper()[0]));
+            }
+
+            if (plug11L.Text != "" && plug11P.Text != "" && char.IsLetter(plug11L.Text[0]) && char.IsLetter(plug11P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug11L.Text.ToUpper()[0], plug11P.Text.ToUpper()[0]));
+            }
+
+            if (plug12L.Text != "" && plug12P.Text != "" && char.IsLetter(plug12L.Text[0]) && char.IsLetter(plug12P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug12L.Text.ToUpper()[0], plug12P.Text.ToUpper()[0]));
+            }
+
+            if (plug13L.Text != "" && plug13P.Text != "" && char.IsLetter(plug13L.Text[0]) && char.IsLetter(plug13P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug13L.Text.ToUpper()[0], plug13P.Text.ToUpper()[0]));
+            }
+
+            plugboard = new Plugboard(tempLista);
+        }
+
+        //Zbiera informację o rotorach
+        private void getRotors()
+        {
+            rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
+            rotorS = new Rotor("II", (int)rotor2_position.Value, (int)rotor2_ringPosition.Value);
+            rotorP = new Rotor("III", (int)rotor3_position.Value, (int)rotor3_ringPosition.Value);
+            rotory = new Rotors(rotorP, rotorS, rotorL);
         }
 
         private void Form1_Load(object sender, EventArgs e)
