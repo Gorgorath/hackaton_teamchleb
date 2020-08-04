@@ -23,7 +23,7 @@ namespace hackaton_teamchleb
         Rotor rotorP;
         Rotors rotory;
         EntryWheel entryWheel = new EntryWheel();
-        Reflector reflector = new Reflector("B");
+        Reflector reflector;
 
         public Form1()
         {
@@ -35,6 +35,7 @@ namespace hackaton_teamchleb
         {
             getPlugs();
             getRotors();
+            getReflector();
 
             str = input_textbox.Text;
             clearString();
@@ -73,7 +74,7 @@ namespace hackaton_teamchleb
                 znak = rotorL.ZamienZnak(znak);
                 znak = rotorS.ZamienZnak(znak);
                 znak = rotorP.ZamienZnak(znak);
-                //znak = entryWheel.ZamienZnak(znak);
+                //znak = entryWheel.ZamienZnak(znak);*/
                 znak = plugboard.ZamienZnak(znak);
 
                 wynik += znak;
@@ -180,10 +181,15 @@ namespace hackaton_teamchleb
         //Zbiera informację o rotorach
         private void getRotors()
         {
-            rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
-            rotorS = new Rotor("II", (int)rotor2_position.Value, (int)rotor2_ringPosition.Value);
-            rotorP = new Rotor("III", (int)rotor3_position.Value, (int)rotor3_ringPosition.Value);
+            rotorL = new Rotor(rotor1_type.Text, (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
+            rotorS = new Rotor(rotor2_type.Text, (int)rotor2_position.Value, (int)rotor2_ringPosition.Value);
+            rotorP = new Rotor(rotor3_type.Text, (int)rotor3_position.Value, (int)rotor3_ringPosition.Value);
             rotory = new Rotors(rotorP, rotorS, rotorL);
+        }
+
+        private void getReflector()
+        {
+            reflector = new Reflector(reflektor_type.Text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -267,6 +273,16 @@ namespace hackaton_teamchleb
             {
                 rotorKey = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
                 rotorRotateChar = 'W';
+            }
+            else if (rotorType == "IV")
+            {
+                rotorKey = "ESOVPZJAYQUIRHXLNFTGKDCMWB";
+                rotorRotateChar = 'K';
+            }
+            else if (rotorType == "V")
+            {
+                rotorKey = "VZBRGITYUPSDNHLXAWMJQOFECK";
+                rotorRotateChar = 'A';
             }
         }
 

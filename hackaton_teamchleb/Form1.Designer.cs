@@ -101,6 +101,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.plug13P = new System.Windows.Forms.TextBox();
             this.plug13L = new System.Windows.Forms.TextBox();
+            this.rotor3_type = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.rotor2_type = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.rotor1_type = new System.Windows.Forms.ComboBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.reflektor_type = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.rotor3_ringPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor2_ringPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor1_ringPosition)).BeginInit();
@@ -125,6 +134,7 @@
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // input_textbox
@@ -152,7 +162,7 @@
             // 
             // rotor3_ringPosition
             // 
-            this.rotor3_ringPosition.Location = new System.Drawing.Point(108, 34);
+            this.rotor3_ringPosition.Location = new System.Drawing.Point(198, 33);
             this.rotor3_ringPosition.Margin = new System.Windows.Forms.Padding(2);
             this.rotor3_ringPosition.Maximum = new decimal(new int[] {
             26,
@@ -175,7 +185,7 @@
             // 
             // rotor2_ringPosition
             // 
-            this.rotor2_ringPosition.Location = new System.Drawing.Point(108, 34);
+            this.rotor2_ringPosition.Location = new System.Drawing.Point(198, 33);
             this.rotor2_ringPosition.Margin = new System.Windows.Forms.Padding(2);
             this.rotor2_ringPosition.Maximum = new decimal(new int[] {
             26,
@@ -198,7 +208,7 @@
             // 
             // rotor1_ringPosition
             // 
-            this.rotor1_ringPosition.Location = new System.Drawing.Point(108, 34);
+            this.rotor1_ringPosition.Location = new System.Drawing.Point(198, 33);
             this.rotor1_ringPosition.Margin = new System.Windows.Forms.Padding(2);
             this.rotor1_ringPosition.Maximum = new decimal(new int[] {
             26,
@@ -221,7 +231,7 @@
             // 
             // rotor3_position
             // 
-            this.rotor3_position.Location = new System.Drawing.Point(4, 34);
+            this.rotor3_position.Location = new System.Drawing.Point(88, 33);
             this.rotor3_position.Margin = new System.Windows.Forms.Padding(2);
             this.rotor3_position.Maximum = new decimal(new int[] {
             26,
@@ -244,7 +254,7 @@
             // 
             // rotor2_position
             // 
-            this.rotor2_position.Location = new System.Drawing.Point(4, 34);
+            this.rotor2_position.Location = new System.Drawing.Point(88, 33);
             this.rotor2_position.Margin = new System.Windows.Forms.Padding(2);
             this.rotor2_position.Maximum = new decimal(new int[] {
             26,
@@ -267,7 +277,7 @@
             // 
             // rotor1_position
             // 
-            this.rotor1_position.Location = new System.Drawing.Point(4, 34);
+            this.rotor1_position.Location = new System.Drawing.Point(89, 33);
             this.rotor1_position.Margin = new System.Windows.Forms.Padding(2);
             this.rotor1_position.Maximum = new decimal(new int[] {
             26,
@@ -292,11 +302,11 @@
             // 
             this.code_button.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.code_button.Font = new System.Drawing.Font("Courier New", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.code_button.Location = new System.Drawing.Point(17, 479);
+            this.code_button.Location = new System.Drawing.Point(17, 473);
             this.code_button.Margin = new System.Windows.Forms.Padding(8);
             this.code_button.Name = "code_button";
             this.code_button.Padding = new System.Windows.Forms.Padding(8);
-            this.code_button.Size = new System.Drawing.Size(395, 98);
+            this.code_button.Size = new System.Drawing.Size(484, 98);
             this.code_button.TabIndex = 9;
             this.code_button.Text = "Szyfruj";
             this.code_button.UseVisualStyleBackColor = true;
@@ -306,7 +316,7 @@
             // 
             this.output_box.Controls.Add(this.output_textbox);
             this.output_box.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.output_box.Location = new System.Drawing.Point(11, 118);
+            this.output_box.Location = new System.Drawing.Point(11, 133);
             this.output_box.Margin = new System.Windows.Forms.Padding(2);
             this.output_box.Name = "output_box";
             this.output_box.Padding = new System.Windows.Forms.Padding(2);
@@ -330,6 +340,8 @@
             // 
             // rotor1_box
             // 
+            this.rotor1_box.Controls.Add(this.label16);
+            this.rotor1_box.Controls.Add(this.rotor1_type);
             this.rotor1_box.Controls.Add(this.rotor1_label2);
             this.rotor1_box.Controls.Add(this.rotor1_label1);
             this.rotor1_box.Controls.Add(this.rotor1_position);
@@ -339,7 +351,7 @@
             this.rotor1_box.Margin = new System.Windows.Forms.Padding(2);
             this.rotor1_box.Name = "rotor1_box";
             this.rotor1_box.Padding = new System.Windows.Forms.Padding(2);
-            this.rotor1_box.Size = new System.Drawing.Size(202, 57);
+            this.rotor1_box.Size = new System.Drawing.Size(296, 57);
             this.rotor1_box.TabIndex = 20;
             this.rotor1_box.TabStop = false;
             this.rotor1_box.Text = "Rotor Lewy";
@@ -348,7 +360,7 @@
             // 
             this.rotor1_label2.AutoSize = true;
             this.rotor1_label2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rotor1_label2.Location = new System.Drawing.Point(106, 19);
+            this.rotor1_label2.Location = new System.Drawing.Point(194, 19);
             this.rotor1_label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rotor1_label2.Name = "rotor1_label2";
             this.rotor1_label2.Size = new System.Drawing.Size(98, 14);
@@ -359,7 +371,7 @@
             // 
             this.rotor1_label1.AutoSize = true;
             this.rotor1_label1.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rotor1_label1.Location = new System.Drawing.Point(2, 19);
+            this.rotor1_label1.Location = new System.Drawing.Point(85, 19);
             this.rotor1_label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rotor1_label1.Name = "rotor1_label1";
             this.rotor1_label1.Size = new System.Drawing.Size(105, 14);
@@ -368,6 +380,8 @@
             // 
             // rotor2_box
             // 
+            this.rotor2_box.Controls.Add(this.label15);
+            this.rotor2_box.Controls.Add(this.rotor2_type);
             this.rotor2_box.Controls.Add(this.rotor2_label2);
             this.rotor2_box.Controls.Add(this.rotor2_label1);
             this.rotor2_box.Controls.Add(this.rotor2_ringPosition);
@@ -377,7 +391,7 @@
             this.rotor2_box.Margin = new System.Windows.Forms.Padding(2);
             this.rotor2_box.Name = "rotor2_box";
             this.rotor2_box.Padding = new System.Windows.Forms.Padding(2);
-            this.rotor2_box.Size = new System.Drawing.Size(202, 57);
+            this.rotor2_box.Size = new System.Drawing.Size(296, 57);
             this.rotor2_box.TabIndex = 23;
             this.rotor2_box.TabStop = false;
             this.rotor2_box.Text = "Rotor Środkowy";
@@ -386,7 +400,7 @@
             // 
             this.rotor2_label2.AutoSize = true;
             this.rotor2_label2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rotor2_label2.Location = new System.Drawing.Point(106, 19);
+            this.rotor2_label2.Location = new System.Drawing.Point(195, 17);
             this.rotor2_label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rotor2_label2.Name = "rotor2_label2";
             this.rotor2_label2.Size = new System.Drawing.Size(98, 14);
@@ -397,7 +411,7 @@
             // 
             this.rotor2_label1.AutoSize = true;
             this.rotor2_label1.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rotor2_label1.Location = new System.Drawing.Point(2, 19);
+            this.rotor2_label1.Location = new System.Drawing.Point(85, 18);
             this.rotor2_label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rotor2_label1.Name = "rotor2_label1";
             this.rotor2_label1.Size = new System.Drawing.Size(105, 14);
@@ -406,6 +420,8 @@
             // 
             // rotor3_box
             // 
+            this.rotor3_box.Controls.Add(this.label14);
+            this.rotor3_box.Controls.Add(this.rotor3_type);
             this.rotor3_box.Controls.Add(this.rotor3_label2);
             this.rotor3_box.Controls.Add(this.rotor3_label1);
             this.rotor3_box.Controls.Add(this.rotor3_position);
@@ -415,7 +431,7 @@
             this.rotor3_box.Margin = new System.Windows.Forms.Padding(2);
             this.rotor3_box.Name = "rotor3_box";
             this.rotor3_box.Padding = new System.Windows.Forms.Padding(2);
-            this.rotor3_box.Size = new System.Drawing.Size(202, 57);
+            this.rotor3_box.Size = new System.Drawing.Size(296, 57);
             this.rotor3_box.TabIndex = 23;
             this.rotor3_box.TabStop = false;
             this.rotor3_box.Text = "Rotor Prawy";
@@ -424,7 +440,7 @@
             // 
             this.rotor3_label2.AutoSize = true;
             this.rotor3_label2.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rotor3_label2.Location = new System.Drawing.Point(106, 19);
+            this.rotor3_label2.Location = new System.Drawing.Point(195, 18);
             this.rotor3_label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rotor3_label2.Name = "rotor3_label2";
             this.rotor3_label2.Size = new System.Drawing.Size(98, 14);
@@ -435,7 +451,7 @@
             // 
             this.rotor3_label1.AutoSize = true;
             this.rotor3_label1.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.rotor3_label1.Location = new System.Drawing.Point(2, 19);
+            this.rotor3_label1.Location = new System.Drawing.Point(85, 18);
             this.rotor3_label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rotor3_label1.Name = "rotor3_label1";
             this.rotor3_label1.Size = new System.Drawing.Size(105, 14);
@@ -448,7 +464,7 @@
             this.groupBox4.Controls.Add(this.plug4P);
             this.groupBox4.Controls.Add(this.plug4L);
             this.groupBox4.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox4.Location = new System.Drawing.Point(306, 226);
+            this.groupBox4.Location = new System.Drawing.Point(307, 273);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(87, 56);
             this.groupBox4.TabIndex = 3;
@@ -487,7 +503,7 @@
             this.groupBox1.Controls.Add(this.plug1P);
             this.groupBox1.Controls.Add(this.plug1L);
             this.groupBox1.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(27, 226);
+            this.groupBox1.Location = new System.Drawing.Point(28, 273);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(87, 56);
             this.groupBox1.TabIndex = 24;
@@ -526,7 +542,7 @@
             this.groupBox2.Controls.Add(this.plug2P);
             this.groupBox2.Controls.Add(this.plug2L);
             this.groupBox2.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(120, 226);
+            this.groupBox2.Location = new System.Drawing.Point(121, 273);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(87, 56);
             this.groupBox2.TabIndex = 3;
@@ -565,7 +581,7 @@
             this.groupBox3.Controls.Add(this.plug3P);
             this.groupBox3.Controls.Add(this.plug3L);
             this.groupBox3.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox3.Location = new System.Drawing.Point(213, 226);
+            this.groupBox3.Location = new System.Drawing.Point(214, 273);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(87, 56);
             this.groupBox3.TabIndex = 3;
@@ -604,7 +620,7 @@
             this.groupBox5.Controls.Add(this.plug7P);
             this.groupBox5.Controls.Add(this.plug7L);
             this.groupBox5.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox5.Location = new System.Drawing.Point(213, 288);
+            this.groupBox5.Location = new System.Drawing.Point(121, 335);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(87, 56);
             this.groupBox5.TabIndex = 25;
@@ -643,7 +659,7 @@
             this.groupBox6.Controls.Add(this.plug6P);
             this.groupBox6.Controls.Add(this.plug6L);
             this.groupBox6.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox6.Location = new System.Drawing.Point(120, 288);
+            this.groupBox6.Location = new System.Drawing.Point(28, 335);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(87, 56);
             this.groupBox6.TabIndex = 26;
@@ -682,7 +698,7 @@
             this.groupBox7.Controls.Add(this.plug5P);
             this.groupBox7.Controls.Add(this.plug5L);
             this.groupBox7.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox7.Location = new System.Drawing.Point(27, 288);
+            this.groupBox7.Location = new System.Drawing.Point(400, 273);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(87, 56);
             this.groupBox7.TabIndex = 28;
@@ -721,7 +737,7 @@
             this.groupBox8.Controls.Add(this.plug8P);
             this.groupBox8.Controls.Add(this.plug8L);
             this.groupBox8.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox8.Location = new System.Drawing.Point(306, 288);
+            this.groupBox8.Location = new System.Drawing.Point(214, 335);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(87, 56);
             this.groupBox8.TabIndex = 27;
@@ -760,7 +776,7 @@
             this.groupBox9.Controls.Add(this.plug11P);
             this.groupBox9.Controls.Add(this.plug11L);
             this.groupBox9.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox9.Location = new System.Drawing.Point(213, 350);
+            this.groupBox9.Location = new System.Drawing.Point(121, 397);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(87, 56);
             this.groupBox9.TabIndex = 29;
@@ -799,7 +815,7 @@
             this.groupBox10.Controls.Add(this.plug10P);
             this.groupBox10.Controls.Add(this.plug10L);
             this.groupBox10.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox10.Location = new System.Drawing.Point(120, 350);
+            this.groupBox10.Location = new System.Drawing.Point(400, 335);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(87, 56);
             this.groupBox10.TabIndex = 30;
@@ -838,7 +854,7 @@
             this.groupBox11.Controls.Add(this.plug9P);
             this.groupBox11.Controls.Add(this.plug9L);
             this.groupBox11.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox11.Location = new System.Drawing.Point(27, 350);
+            this.groupBox11.Location = new System.Drawing.Point(307, 335);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(87, 56);
             this.groupBox11.TabIndex = 32;
@@ -877,7 +893,7 @@
             this.groupBox12.Controls.Add(this.plug12P);
             this.groupBox12.Controls.Add(this.plug12L);
             this.groupBox12.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox12.Location = new System.Drawing.Point(306, 350);
+            this.groupBox12.Location = new System.Drawing.Point(214, 397);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(87, 56);
             this.groupBox12.TabIndex = 31;
@@ -916,7 +932,7 @@
             this.groupBox13.Controls.Add(this.plug13P);
             this.groupBox13.Controls.Add(this.plug13L);
             this.groupBox13.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox13.Location = new System.Drawing.Point(170, 412);
+            this.groupBox13.Location = new System.Drawing.Point(307, 397);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(87, 56);
             this.groupBox13.TabIndex = 25;
@@ -949,11 +965,127 @@
             this.plug13L.Size = new System.Drawing.Size(18, 24);
             this.plug13L.TabIndex = 0;
             // 
+            // rotor3_type
+            // 
+            this.rotor3_type.FormattingEnabled = true;
+            this.rotor3_type.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V"});
+            this.rotor3_type.Location = new System.Drawing.Point(7, 32);
+            this.rotor3_type.Name = "rotor3_type";
+            this.rotor3_type.Size = new System.Drawing.Size(76, 24);
+            this.rotor3_type.TabIndex = 23;
+            this.rotor3_type.Text = "III";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(4, 18);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 14);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Rotor type";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(4, 18);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 14);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Rotor type";
+            // 
+            // rotor2_type
+            // 
+            this.rotor2_type.FormattingEnabled = true;
+            this.rotor2_type.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V"});
+            this.rotor2_type.Location = new System.Drawing.Point(7, 32);
+            this.rotor2_type.Name = "rotor2_type";
+            this.rotor2_type.Size = new System.Drawing.Size(76, 24);
+            this.rotor2_type.TabIndex = 25;
+            this.rotor2_type.Text = "II";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(4, 18);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 14);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Rotor type";
+            // 
+            // rotor1_type
+            // 
+            this.rotor1_type.FormattingEnabled = true;
+            this.rotor1_type.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V"});
+            this.rotor1_type.Location = new System.Drawing.Point(7, 32);
+            this.rotor1_type.Name = "rotor1_type";
+            this.rotor1_type.Size = new System.Drawing.Size(76, 24);
+            this.rotor1_type.TabIndex = 27;
+            this.rotor1_type.Text = "I";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.label17);
+            this.groupBox14.Controls.Add(this.reflektor_type);
+            this.groupBox14.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox14.Location = new System.Drawing.Point(214, 194);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox14.Size = new System.Drawing.Size(111, 57);
+            this.groupBox14.TabIndex = 25;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Reflektor";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.Location = new System.Drawing.Point(4, 18);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(105, 14);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Reflektor type";
+            // 
+            // reflektor_type
+            // 
+            this.reflektor_type.FormattingEnabled = true;
+            this.reflektor_type.Items.AddRange(new object[] {
+            "B",
+            "C"});
+            this.reflektor_type.Location = new System.Drawing.Point(7, 32);
+            this.reflektor_type.Name = "reflektor_type";
+            this.reflektor_type.Size = new System.Drawing.Size(76, 24);
+            this.reflektor_type.TabIndex = 23;
+            this.reflektor_type.Text = "B";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 588);
+            this.ClientSize = new System.Drawing.Size(518, 588);
+            this.Controls.Add(this.groupBox14);
             this.Controls.Add(this.groupBox13);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox5);
@@ -976,7 +1108,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(445, 700);
+            this.MaximumSize = new System.Drawing.Size(600, 700);
             this.MinimumSize = new System.Drawing.Size(445, 388);
             this.Name = "Form1";
             this.Text = "Enigma";
@@ -1020,6 +1152,8 @@
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1098,6 +1232,15 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox plug13P;
         private System.Windows.Forms.TextBox plug13L;
+        private System.Windows.Forms.ComboBox rotor3_type;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox rotor2_type;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox rotor1_type;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox reflektor_type;
     }
 }
 
