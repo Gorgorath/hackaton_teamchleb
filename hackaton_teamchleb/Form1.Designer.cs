@@ -41,12 +41,18 @@
             this.output_box = new System.Windows.Forms.GroupBox();
             this.input_box = new System.Windows.Forms.GroupBox();
             this.rotor1_box = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.rotor1_type = new System.Windows.Forms.ComboBox();
             this.rotor1_label2 = new System.Windows.Forms.Label();
             this.rotor1_label1 = new System.Windows.Forms.Label();
             this.rotor2_box = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.rotor2_type = new System.Windows.Forms.ComboBox();
             this.rotor2_label2 = new System.Windows.Forms.Label();
             this.rotor2_label1 = new System.Windows.Forms.Label();
             this.rotor3_box = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.rotor3_type = new System.Windows.Forms.ComboBox();
             this.rotor3_label2 = new System.Windows.Forms.Label();
             this.rotor3_label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -101,15 +107,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.plug13P = new System.Windows.Forms.TextBox();
             this.plug13L = new System.Windows.Forms.TextBox();
-            this.rotor3_type = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.rotor2_type = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.rotor1_type = new System.Windows.Forms.ComboBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.reflektor_type = new System.Windows.Forms.ComboBox();
+            this.reflector_type = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.rotor3_ringPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor2_ringPosition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotor1_ringPosition)).BeginInit();
@@ -356,6 +356,32 @@
             this.rotor1_box.TabStop = false;
             this.rotor1_box.Text = "Rotor Lewy";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(4, 18);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(77, 14);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Rotor type";
+            // 
+            // rotor1_type
+            // 
+            this.rotor1_type.FormattingEnabled = true;
+            this.rotor1_type.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V"});
+            this.rotor1_type.Location = new System.Drawing.Point(7, 32);
+            this.rotor1_type.Name = "rotor1_type";
+            this.rotor1_type.Size = new System.Drawing.Size(76, 24);
+            this.rotor1_type.TabIndex = 27;
+            this.rotor1_type.Text = "I";
+            // 
             // rotor1_label2
             // 
             this.rotor1_label2.AutoSize = true;
@@ -396,6 +422,32 @@
             this.rotor2_box.TabStop = false;
             this.rotor2_box.Text = "Rotor Środkowy";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.Location = new System.Drawing.Point(4, 18);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 14);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Rotor type";
+            // 
+            // rotor2_type
+            // 
+            this.rotor2_type.FormattingEnabled = true;
+            this.rotor2_type.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V"});
+            this.rotor2_type.Location = new System.Drawing.Point(7, 32);
+            this.rotor2_type.Name = "rotor2_type";
+            this.rotor2_type.Size = new System.Drawing.Size(76, 24);
+            this.rotor2_type.TabIndex = 25;
+            this.rotor2_type.Text = "II";
+            // 
             // rotor2_label2
             // 
             this.rotor2_label2.AutoSize = true;
@@ -435,6 +487,32 @@
             this.rotor3_box.TabIndex = 23;
             this.rotor3_box.TabStop = false;
             this.rotor3_box.Text = "Rotor Prawy";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(4, 18);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 14);
+            this.label14.TabIndex = 24;
+            this.label14.Text = "Rotor type";
+            // 
+            // rotor3_type
+            // 
+            this.rotor3_type.FormattingEnabled = true;
+            this.rotor3_type.Items.AddRange(new object[] {
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V"});
+            this.rotor3_type.Location = new System.Drawing.Point(7, 32);
+            this.rotor3_type.Name = "rotor3_type";
+            this.rotor3_type.Size = new System.Drawing.Size(76, 24);
+            this.rotor3_type.TabIndex = 23;
+            this.rotor3_type.Text = "III";
             // 
             // rotor3_label2
             // 
@@ -965,88 +1043,10 @@
             this.plug13L.Size = new System.Drawing.Size(18, 24);
             this.plug13L.TabIndex = 0;
             // 
-            // rotor3_type
-            // 
-            this.rotor3_type.FormattingEnabled = true;
-            this.rotor3_type.Items.AddRange(new object[] {
-            "I",
-            "II",
-            "III",
-            "IV",
-            "V"});
-            this.rotor3_type.Location = new System.Drawing.Point(7, 32);
-            this.rotor3_type.Name = "rotor3_type";
-            this.rotor3_type.Size = new System.Drawing.Size(76, 24);
-            this.rotor3_type.TabIndex = 23;
-            this.rotor3_type.Text = "III";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.Location = new System.Drawing.Point(4, 18);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 14);
-            this.label14.TabIndex = 24;
-            this.label14.Text = "Rotor type";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.Location = new System.Drawing.Point(4, 18);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 14);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "Rotor type";
-            // 
-            // rotor2_type
-            // 
-            this.rotor2_type.FormattingEnabled = true;
-            this.rotor2_type.Items.AddRange(new object[] {
-            "I",
-            "II",
-            "III",
-            "IV",
-            "V"});
-            this.rotor2_type.Location = new System.Drawing.Point(7, 32);
-            this.rotor2_type.Name = "rotor2_type";
-            this.rotor2_type.Size = new System.Drawing.Size(76, 24);
-            this.rotor2_type.TabIndex = 25;
-            this.rotor2_type.Text = "II";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Courier New", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(4, 18);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(77, 14);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Rotor type";
-            // 
-            // rotor1_type
-            // 
-            this.rotor1_type.FormattingEnabled = true;
-            this.rotor1_type.Items.AddRange(new object[] {
-            "I",
-            "II",
-            "III",
-            "IV",
-            "V"});
-            this.rotor1_type.Location = new System.Drawing.Point(7, 32);
-            this.rotor1_type.Name = "rotor1_type";
-            this.rotor1_type.Size = new System.Drawing.Size(76, 24);
-            this.rotor1_type.TabIndex = 27;
-            this.rotor1_type.Text = "I";
-            // 
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.label17);
-            this.groupBox14.Controls.Add(this.reflektor_type);
+            this.groupBox14.Controls.Add(this.reflector_type);
             this.groupBox14.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox14.Location = new System.Drawing.Point(214, 194);
             this.groupBox14.Margin = new System.Windows.Forms.Padding(2);
@@ -1055,7 +1055,7 @@
             this.groupBox14.Size = new System.Drawing.Size(111, 57);
             this.groupBox14.TabIndex = 25;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Reflektor";
+            this.groupBox14.Text = "Reflector";
             // 
             // label17
             // 
@@ -1066,19 +1066,19 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(105, 14);
             this.label17.TabIndex = 24;
-            this.label17.Text = "Reflektor type";
+            this.label17.Text = "Reflector type";
             // 
-            // reflektor_type
+            // reflector_type
             // 
-            this.reflektor_type.FormattingEnabled = true;
-            this.reflektor_type.Items.AddRange(new object[] {
+            this.reflector_type.FormattingEnabled = true;
+            this.reflector_type.Items.AddRange(new object[] {
             "B",
             "C"});
-            this.reflektor_type.Location = new System.Drawing.Point(7, 32);
-            this.reflektor_type.Name = "reflektor_type";
-            this.reflektor_type.Size = new System.Drawing.Size(76, 24);
-            this.reflektor_type.TabIndex = 23;
-            this.reflektor_type.Text = "B";
+            this.reflector_type.Location = new System.Drawing.Point(7, 32);
+            this.reflector_type.Name = "reflector_type";
+            this.reflector_type.Size = new System.Drawing.Size(76, 24);
+            this.reflector_type.TabIndex = 23;
+            this.reflector_type.Text = "B";
             // 
             // Form1
             // 
@@ -1240,7 +1240,7 @@
         private System.Windows.Forms.ComboBox rotor1_type;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox reflektor_type;
+        private System.Windows.Forms.ComboBox reflector_type;
     }
 }
 

@@ -189,7 +189,7 @@ namespace hackaton_teamchleb
 
         private void getReflector()
         {
-            reflector = new Reflector(reflektor_type.Text);
+            reflector = new Reflector(reflector_type.Text);
         }
 
         private void Form1_Load(object sender, EventArgs e)
