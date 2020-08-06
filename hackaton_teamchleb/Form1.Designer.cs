@@ -1072,13 +1072,14 @@
             // 
             this.reflector_type.FormattingEnabled = true;
             this.reflector_type.Items.AddRange(new object[] {
-            "B",
-            "C"});
+            "UKW A",
+            "UKW B",
+            "UKW C"});
             this.reflector_type.Location = new System.Drawing.Point(7, 32);
             this.reflector_type.Name = "reflector_type";
             this.reflector_type.Size = new System.Drawing.Size(76, 24);
             this.reflector_type.TabIndex = 23;
-            this.reflector_type.Text = "B";
+            this.reflector_type.Text = "UKW A";
             // 
             // Form1
             // 
@@ -1108,8 +1109,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(600, 700);
-            this.MinimumSize = new System.Drawing.Size(445, 388);
+            this.MaximumSize = new System.Drawing.Size(534, 627);
+            this.MinimumSize = new System.Drawing.Size(534, 627);
             this.Name = "Form1";
             this.Text = "Enigma";
             ((System.ComponentModel.ISupportInitialize)(this.rotor3_ringPosition)).EndInit();

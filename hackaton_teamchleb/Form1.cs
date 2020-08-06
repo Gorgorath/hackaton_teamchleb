@@ -412,12 +412,16 @@ namespace hackaton_teamchleb
         public Reflector(string rType)
         {
             reflectorType = rType;
-
-            if (reflectorType == "B")
+            
+            if (reflectorType == "UKW A")
+            {
+                reflectorKey = "EJMZALYXVBWFCRQUONTSPIKHGD";
+            }
+            else if (reflectorType == "UKW B")
             {
                 reflectorKey = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
             }
-            else if (reflectorType == "C")
+            else if (reflectorType == "UKW C")
             {
                 reflectorKey = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
             }
