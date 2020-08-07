@@ -375,7 +375,10 @@
             "II",
             "III",
             "IV",
-            "V"});
+            "V",
+            "VI",
+            "VII",
+            "VIII"});
             this.rotor1_type.Location = new System.Drawing.Point(7, 32);
             this.rotor1_type.Name = "rotor1_type";
             this.rotor1_type.Size = new System.Drawing.Size(76, 24);
@@ -441,7 +444,10 @@
             "II",
             "III",
             "IV",
-            "V"});
+            "V",
+            "VI",
+            "VII",
+            "VIII"});
             this.rotor2_type.Location = new System.Drawing.Point(7, 32);
             this.rotor2_type.Name = "rotor2_type";
             this.rotor2_type.Size = new System.Drawing.Size(76, 24);
@@ -507,7 +513,10 @@
             "II",
             "III",
             "IV",
-            "V"});
+            "V",
+            "VI",
+            "VII",
+            "VIII"});
             this.rotor3_type.Location = new System.Drawing.Point(7, 32);
             this.rotor3_type.Name = "rotor3_type";
             this.rotor3_type.Size = new System.Drawing.Size(76, 24);
@@ -1079,7 +1088,7 @@
             this.reflector_type.Name = "reflector_type";
             this.reflector_type.Size = new System.Drawing.Size(76, 24);
             this.reflector_type.TabIndex = 23;
-            this.reflector_type.Text = "UKW A";
+            this.reflector_type.Text = "UKW B";
             // 
             // Form1
             // 

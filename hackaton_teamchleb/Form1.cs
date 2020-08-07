@@ -61,19 +61,19 @@ namespace hackaton_teamchleb
                 char znak = ch;
                 znak = plugboard.ZamienZnak(znak);
                 //znak = entryWheel.ZamienZnak(znak);
-                znak = rotorP.ZamienZnak(znak);
-                znak = rotorS.ZamienZnak(znak);
-                znak = rotorL.ZamienZnak(znak);
-                znak = reflector.ZamienZnak(znak);
+                znak = rotorP.ZamienZnak(znak, 0);
+                znak = rotorS.ZamienZnak(znak, rotorP.rotorKey.IndexOf(znak));
+                znak = rotorL.ZamienZnak(znak, rotorS.rotorKey.IndexOf(znak));
+                znak = reflector.ZamienZnak(znak, rotorL.rotorKey.IndexOf(znak));
 
                 rotorL.czyPoReflektorze = true;
                 rotorS.czyPoReflektorze = true;
                 rotorP.czyPoReflektorze = true;
                 //entryWheel.czyPoReflektorze = true;
 
-                znak = rotorL.ZamienZnak(znak);
-                znak = rotorS.ZamienZnak(znak);
-                znak = rotorP.ZamienZnak(znak);
+                znak = rotorL.ZamienZnak(znak, reflector.reflectorKey.IndexOf(znak));
+                znak = rotorS.ZamienZnak(znak, rotorL.rotorKey.IndexOf(znak));
+                znak = rotorP.ZamienZnak(znak, rotorS.rotorKey.IndexOf(znak));
                 //znak = entryWheel.ZamienZnak(znak);*/
                 znak = plugboard.ZamienZnak(znak);
 
@@ -248,7 +248,8 @@ namespace hackaton_teamchleb
         int offset;
         string rotorType;
         public string rotorKey;
-        public char rotorRotateChar;
+        public char rotorRotateChar = ' ';
+        public char rotorRotateChar2 = ' ';
         string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public bool czyPoReflektorze = false;
 
@@ -284,10 +285,28 @@ namespace hackaton_teamchleb
                 rotorKey = "VZBRGITYUPSDNHLXAWMJQOFECK";
                 rotorRotateChar = 'A';
             }
+            else if (rotorType == "VI")
+            {
+                rotorKey = "JPGVOUMFYQBENHZRDKASXLICTW";
+                rotorRotateChar = 'A';
+                rotorRotateChar2 = 'N';
+            }
+            else if (rotorType == "VII")
+            {
+                rotorKey = "NZJHGRCXMYSWBOUFAIVLPEKQDT";
+                rotorRotateChar = 'A';
+                rotorRotateChar2 = 'N';
+            }
+            else if (rotorType == "VIII")
+            {
+                rotorKey = "FKQHTLXOCBJSPDZRAMEWNIUYGV";
+                rotorRotateChar = 'A';
+                rotorRotateChar2 = 'N';
+            }
         }
 
         //Zmienia znak zgodnie z obecnym ustawieniem rotora i jego pierścienia
-        public char ZamienZnak(char ch)
+        public char ZamienZnak(char ch, int chPos)
         {
             offset = rotorPos - ringPos;
             if (!this.czyPoReflektorze)
@@ -307,7 +326,6 @@ namespace hackaton_teamchleb
             } 
             else
             {
-                //nie jestem pewien
                 if (rotorKey.IndexOf(ch) - offset < 26 && rotorKey.IndexOf(ch) - offset >= 0)
                 {
                     ch = znaki[rotorKey.IndexOf(ch) - offset];
@@ -348,12 +366,12 @@ namespace hackaton_teamchleb
             if (rotorP.rotorPos != 26)
             {
                 rotorP.rotorPos++;
-                if (rotorP.rotorKey[rotorP.rotorPos] == rotorP.rotorRotateChar)
+                if (rotorP.rotorKey[rotorP.rotorPos] == rotorP.rotorRotateChar || rotorP.rotorKey[rotorP.rotorPos] == rotorP.rotorRotateChar2)
                 {
                     if (rotorS.rotorPos != 26)
                     {
                         rotorS.rotorPos++;
-                        if (rotorS.rotorKey[rotorS.rotorPos] == rotorS.rotorRotateChar)
+                        if (rotorS.rotorKey[rotorS.rotorPos] == rotorS.rotorRotateChar || rotorS.rotorKey[rotorS.rotorPos] == rotorS.rotorRotateChar2)
                         {
                             if (rotorL.rotorPos != 26)
                             {
@@ -405,7 +423,7 @@ namespace hackaton_teamchleb
     {
         //Zamienia znaki na inne zgodnie z kluczem, które są później przekazane z powrotem do rotorów
         string reflectorType;
-        string reflectorKey;
+        public string reflectorKey;
         string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         //Konstruktor
@@ -428,7 +446,7 @@ namespace hackaton_teamchleb
         }
 
         //Zmienia znak jak napisano powyżej
-        public char ZamienZnak(char ch)
+        public char ZamienZnak(char ch, int chPos)
         {
             ch = reflectorKey[znaki.IndexOf(ch)];
             return ch;
