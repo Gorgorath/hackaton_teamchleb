@@ -13,9 +13,17 @@ namespace hackaton_teamchleb
 {
     public partial class Form1 : Form
     {
-        string input = "";
-        List<char> inputChars = new List<char>();
+        string str = "";
+        List<char> strChars = new List<char>();
         string output = "";
+
+        Plugboard plugboard;
+        Rotor rotorL;
+        Rotor rotorS;
+        Rotor rotorP;
+        Rotors rotory;
+        EntryWheel entryWheel = new EntryWheel();
+        Reflector reflector;
 
         public Form1()
         {
@@ -25,29 +33,169 @@ namespace hackaton_teamchleb
         //Przy kliknięciu guzika
         private void code_button_Click(object sender, EventArgs e)
         {
-            input = input_textbox.Text.ToUpper();
-            inputChars = input.ToList();
-            //Rotor rotorL = new Rotor("I", (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
-            //Plug tplug = new Plug('A', 'P');
-            //Plugboard pboard = new Plugboard(new List<Plug> { tplug });
-            //EntryWheel ew = new EntryWheel();
-            //Reflector reflector = new Reflector("B");
-            //output_textbox.Text = rotorL.ZamienZnak(inputChars[0]).ToString();
-            if (input == "RICKROLL")
+            getPlugs();
+            getRotors();
+            getReflector();
+
+            str = input_textbox.Text;
+            clearString();
+
+            output = enigmaCipher(strChars);
+
+            output_textbox.Text = output;
+        }
+
+        //Szyfrowanie :D
+        private string enigmaCipher(List<char> chars)
+        {
+            string wynik = "";
+            
+            foreach (char ch in chars)
             {
-                Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ&feature=emb_logo");
+                rotory.ObrocRotory();
+                rotorL.czyPoReflektorze = false;
+                rotorS.czyPoReflektorze = false;
+                rotorP.czyPoReflektorze = false;
+                entryWheel.czyPoReflektorze = false;
+
+                char znak = ch;
+                znak = plugboard.ZamienZnak(znak);
+                //znak = entryWheel.ZamienZnak(znak);
+                znak = rotorP.ZamienZnak(znak, 0);
+                znak = rotorS.ZamienZnak(znak, rotorP.rotorKey.IndexOf(znak));
+                znak = rotorL.ZamienZnak(znak, rotorS.rotorKey.IndexOf(znak));
+                znak = reflector.ZamienZnak(znak, rotorL.rotorKey.IndexOf(znak));
+
+                rotorL.czyPoReflektorze = true;
+                rotorS.czyPoReflektorze = true;
+                rotorP.czyPoReflektorze = true;
+                //entryWheel.czyPoReflektorze = true;
+
+                znak = rotorL.ZamienZnak(znak, reflector.reflectorKey.IndexOf(znak));
+                znak = rotorS.ZamienZnak(znak, rotorL.rotorKey.IndexOf(znak));
+                znak = rotorP.ZamienZnak(znak, rotorS.rotorKey.IndexOf(znak));
+                //znak = entryWheel.ZamienZnak(znak);*/
+                znak = plugboard.ZamienZnak(znak);
+
+                wynik += znak;
+            }
+
+            return wynik;
+        }
+
+        //Czyści string z niekompatybilnych znaków
+        private void clearString()
+        {
+            str = str.ToUpper();
+            strChars = str.ToList();
+
+            List<char> doUsuniecia = new List<char>();
+
+            foreach (char ch in strChars)
+            {
+                if (!char.IsLetter(ch))
+                {
+                    doUsuniecia.Add(ch);
+                }
+            }
+
+            foreach (char doU in doUsuniecia)
+            {
+                strChars.Remove(doU);
             }
         }
 
-        /*private string enigmaCipher(List<char> chars)
+        //Zbiera informację o plugach
+        private void getPlugs()
         {
-            Plugboard plugboard = new Plugboard(new List<Plug>());
-            foreach (char ch in chars)
-            {
-                char znak = ch;
+            List<Plug> tempLista = new List<Plug>();
 
+            if (plug1L.Text != "" && plug1P.Text != "" && char.IsLetter(plug1L.Text[0]) && char.IsLetter(plug1P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug1L.Text.ToUpper()[0], plug1P.Text.ToUpper()[0]));
             }
-        }*/
+
+            if (plug2L.Text != "" && plug2P.Text != "" && char.IsLetter(plug2L.Text[0]) && char.IsLetter(plug2P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug2L.Text.ToUpper()[0], plug2P.Text.ToUpper()[0]));
+            }
+
+            if (plug3L.Text != "" && plug3P.Text != "" && char.IsLetter(plug3L.Text[0]) && char.IsLetter(plug3P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug3L.Text.ToUpper()[0], plug3P.Text.ToUpper()[0]));
+            }
+
+            if (plug4L.Text != "" && plug4P.Text != "" && char.IsLetter(plug4L.Text[0]) && char.IsLetter(plug4P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug4L.Text.ToUpper()[0], plug4P.Text.ToUpper()[0]));
+            }
+
+            if (plug5L.Text != "" && plug5P.Text != "" && char.IsLetter(plug5L.Text[0]) && char.IsLetter(plug5P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug5L.Text.ToUpper()[0], plug5P.Text.ToUpper()[0]));
+            }
+
+            if (plug6L.Text != "" && plug6P.Text != "" && char.IsLetter(plug6L.Text[0]) && char.IsLetter(plug6P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug6L.Text.ToUpper()[0], plug6P.Text.ToUpper()[0]));
+            }
+
+            if (plug7L.Text != "" && plug7P.Text != "" && char.IsLetter(plug7L.Text[0]) && char.IsLetter(plug7P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug7L.Text.ToUpper()[0], plug7P.Text.ToUpper()[0]));
+            }
+
+            if (plug8L.Text != "" && plug8P.Text != "" && char.IsLetter(plug8L.Text[0]) && char.IsLetter(plug8P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug8L.Text.ToUpper()[0], plug8P.Text.ToUpper()[0]));
+            }
+
+            if (plug9L.Text != "" && plug9P.Text != "" && char.IsLetter(plug9L.Text[0]) && char.IsLetter(plug9P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug9L.Text.ToUpper()[0], plug9P.Text.ToUpper()[0]));
+            }
+
+            if (plug10L.Text != "" && plug10P.Text != "" && char.IsLetter(plug10L.Text[0]) && char.IsLetter(plug10P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug10L.Text.ToUpper()[0], plug10P.Text.ToUpper()[0]));
+            }
+
+            if (plug11L.Text != "" && plug11P.Text != "" && char.IsLetter(plug11L.Text[0]) && char.IsLetter(plug11P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug11L.Text.ToUpper()[0], plug11P.Text.ToUpper()[0]));
+            }
+
+            if (plug12L.Text != "" && plug12P.Text != "" && char.IsLetter(plug12L.Text[0]) && char.IsLetter(plug12P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug12L.Text.ToUpper()[0], plug12P.Text.ToUpper()[0]));
+            }
+
+            if (plug13L.Text != "" && plug13P.Text != "" && char.IsLetter(plug13L.Text[0]) && char.IsLetter(plug13P.Text[0]))
+            {
+                tempLista.Add(new Plug(plug13L.Text.ToUpper()[0], plug13P.Text.ToUpper()[0]));
+            }
+
+            plugboard = new Plugboard(tempLista);
+        }
+
+        //Zbiera informację o rotorach
+        private void getRotors()
+        {
+            rotorL = new Rotor(rotor1_type.Text, (int)rotor1_position.Value, (int)rotor1_ringPosition.Value);
+            rotorS = new Rotor(rotor2_type.Text, (int)rotor2_position.Value, (int)rotor2_ringPosition.Value);
+            rotorP = new Rotor(rotor3_type.Text, (int)rotor3_position.Value, (int)rotor3_ringPosition.Value);
+            rotory = new Rotors(rotorP, rotorS, rotorL);
+        }
+
+        private void getReflector()
+        {
+            reflector = new Reflector(reflector_type.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     class Plug
@@ -100,7 +248,8 @@ namespace hackaton_teamchleb
         int offset;
         string rotorType;
         public string rotorKey;
-        public char rotorRotateChar;
+        public char rotorRotateChar = ' ';
+        public char rotorRotateChar2 = ' ';
         string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public bool czyPoReflektorze = false;
 
@@ -110,7 +259,6 @@ namespace hackaton_teamchleb
             rotorType = rType;
             rotorPos = roPos;
             ringPos = riPos;
-            offset = (rotorPos - 1) - (ringPos - 1);
 
             if (rotorType == "I")
             {
@@ -127,23 +275,71 @@ namespace hackaton_teamchleb
                 rotorKey = "BDFHJLCPRTXVZNYEIWGAKMUSQO";
                 rotorRotateChar = 'W';
             }
+            else if (rotorType == "IV")
+            {
+                rotorKey = "ESOVPZJAYQUIRHXLNFTGKDCMWB";
+                rotorRotateChar = 'K';
+            }
+            else if (rotorType == "V")
+            {
+                rotorKey = "VZBRGITYUPSDNHLXAWMJQOFECK";
+                rotorRotateChar = 'A';
+            }
+            else if (rotorType == "VI")
+            {
+                rotorKey = "JPGVOUMFYQBENHZRDKASXLICTW";
+                rotorRotateChar = 'A';
+                rotorRotateChar2 = 'N';
+            }
+            else if (rotorType == "VII")
+            {
+                rotorKey = "NZJHGRCXMYSWBOUFAIVLPEKQDT";
+                rotorRotateChar = 'A';
+                rotorRotateChar2 = 'N';
+            }
+            else if (rotorType == "VIII")
+            {
+                rotorKey = "FKQHTLXOCBJSPDZRAMEWNIUYGV";
+                rotorRotateChar = 'A';
+                rotorRotateChar2 = 'N';
+            }
         }
 
         //Zmienia znak zgodnie z obecnym ustawieniem rotora i jego pierścienia
-        public char ZamienZnak(char ch)
+        public char ZamienZnak(char ch, int chPos)
         {
-            if (znaki.IndexOf(ch) + offset < 26 && znaki.IndexOf(ch) + offset >= 0)
+            offset = rotorPos - ringPos;
+            if (!this.czyPoReflektorze)
             {
-                ch = rotorKey[znaki.IndexOf(ch) + offset];
-            }
-            else if (znaki.IndexOf(ch) + offset >= 26)
+                if (znaki.IndexOf(ch) + offset < 26 && znaki.IndexOf(ch) + offset >= 0)
+                {
+                    ch = rotorKey[znaki.IndexOf(ch) + offset];
+                }
+                else if (znaki.IndexOf(ch) + offset >= 26)
+                {
+                    ch = rotorKey[znaki.IndexOf(ch) + offset - 26];
+                }
+                else if (znaki.IndexOf(ch) + offset < 0)
+                {
+                    ch = rotorKey[znaki.IndexOf(ch) + offset + 26];
+                }
+            } 
+            else
             {
-                ch = rotorKey[znaki.IndexOf(ch) + offset - 26];
+                if (rotorKey.IndexOf(ch) - offset < 26 && rotorKey.IndexOf(ch) - offset >= 0)
+                {
+                    ch = znaki[rotorKey.IndexOf(ch) - offset];
+                }
+                else if (rotorKey.IndexOf(ch) - offset >= 26)
+                {
+                    ch = znaki[rotorKey.IndexOf(ch) - offset - 26];
+                }
+                else if (rotorKey.IndexOf(ch) - offset < 0)
+                {
+                    ch = znaki[rotorKey.IndexOf(ch) - offset + 26];
+                }
             }
-            else if (znaki.IndexOf(ch) + offset < 0)
-            {
-                ch = rotorKey[znaki.IndexOf(ch) + offset + 26];
-            }
+                
 
             return ch;
         }
@@ -154,24 +350,48 @@ namespace hackaton_teamchleb
         //Przechowuje listę z wszystkimi rotorami i odpowiada za ich obrót
         //Pierwszy rotor w liście to ma być rotor prawy, drugi to rotor środkowy, a trzeci to rotor lewy
         List<Rotor> rotory = new List<Rotor>();
+        Rotor rotorP, rotorS, rotorL;
 
         //Konstruktor
-        public Rotors(List<Rotor> rs)
+        public Rotors(Rotor rP, Rotor rS, Rotor rL)
         {
-            rotory = rs;
+            rotorP = rP;
+            rotorS = rS;
+            rotorL = rL;
         }
 
         //Obraca rotory
         public void ObrocRotory()
         {
-            rotory[0].rotorPos++;
-            if (rotory[0].rotorKey[rotory[0].rotorPos] == rotory[0].rotorRotateChar)
+            if (rotorP.rotorPos != 26)
             {
-                rotory[1].rotorPos++;
-                if (rotory[1].rotorKey[rotory[1].rotorPos] == rotory[1].rotorRotateChar)
+                rotorP.rotorPos++;
+                if (rotorP.rotorKey[rotorP.rotorPos] == rotorP.rotorRotateChar || rotorP.rotorKey[rotorP.rotorPos] == rotorP.rotorRotateChar2)
                 {
-                    rotory[2].rotorPos++;
+                    if (rotorS.rotorPos != 26)
+                    {
+                        rotorS.rotorPos++;
+                        if (rotorS.rotorKey[rotorS.rotorPos] == rotorS.rotorRotateChar || rotorS.rotorKey[rotorS.rotorPos] == rotorS.rotorRotateChar2)
+                        {
+                            if (rotorL.rotorPos != 26)
+                            {
+                                rotorL.rotorPos++;
+                            }
+                            else
+                            {
+                                rotorL.rotorPos = 1;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        rotorS.rotorPos = 1;
+                    }
                 }
+            }
+            else
+            {
+                rotorP.rotorPos = 1;
             }
         }
     }
@@ -181,11 +401,20 @@ namespace hackaton_teamchleb
         //Zamienia znaki zgodnie z alfabetem na znaki zgodnie z klawiaturą QWERTZ
         string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         string klucz = "QWERTZUIOPASDFGHJKLYXCVBNM";
+        public bool czyPoReflektorze = false;
 
         //Robi dokładnie co w komentarzu powyżej
         public char ZamienZnak(char ch)
         {
-            ch = klucz[znaki.IndexOf(ch)];
+            if (!czyPoReflektorze)
+            {
+                ch = znaki[klucz.IndexOf(ch)];
+            } 
+            else
+            {
+                ch = klucz[znaki.IndexOf(ch)];
+            }
+            
             return ch;
         }
     }
@@ -194,26 +423,30 @@ namespace hackaton_teamchleb
     {
         //Zamienia znaki na inne zgodnie z kluczem, które są później przekazane z powrotem do rotorów
         string reflectorType;
-        string reflectorKey;
+        public string reflectorKey;
         string znaki = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         //Konstruktor
         public Reflector(string rType)
         {
             reflectorType = rType;
-
-            if (reflectorType == "B")
+            
+            if (reflectorType == "UKW A")
+            {
+                reflectorKey = "EJMZALYXVBWFCRQUONTSPIKHGD";
+            }
+            else if (reflectorType == "UKW B")
             {
                 reflectorKey = "YRUHQSLDPXNGOKMIEBFZCWVJAT";
             }
-            else if (reflectorType == "C")
+            else if (reflectorType == "UKW C")
             {
                 reflectorKey = "FVPJIAOYEDRZXWGCTKUQSBNMHL";
             }
         }
 
         //Zmienia znak jak napisano powyżej
-        public char ZamienZnak(char ch)
+        public char ZamienZnak(char ch, int chPos)
         {
             ch = reflectorKey[znaki.IndexOf(ch)];
             return ch;
