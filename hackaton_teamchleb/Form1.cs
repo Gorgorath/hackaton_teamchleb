@@ -13,6 +13,7 @@ namespace hackaton_teamchleb
 {
     public partial class Form1 : Form
     {
+        string Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         string str = "";
         List<char> strChars = new List<char>();
         string output = "";
@@ -93,7 +94,7 @@ namespace hackaton_teamchleb
 
             foreach (char ch in strChars)
             {
-                if (!char.IsLetter(ch))
+                if (!Chars.Contains(ch))
                 {
                     doUsuniecia.Add(ch);
                 }
